@@ -1,14 +1,7 @@
 [build]
 functions = "./functions"
-
-[[redirects]]
-from = "dummy/youtube/v3/*"
-to = "/.netlify/functions/dummy/:splat"
-status = 200
-force = true
-
-[[redirects]]
-from = "/youtube/v3/*"
-to = "/.netlify/functions/youtube/:splat"
-status = 200
-force = true
+[[headers]]
+# Define which paths this specific [[headers]] block will cover.
+for = "/*"
+  [headers.values]
+  Access-Control-Allow-Origin = "*"
